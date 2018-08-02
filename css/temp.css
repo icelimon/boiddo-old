@@ -1,0 +1,21 @@
+.logo {
+  display:block;
+  padding:3px;
+  background-color:#fff;
+  color:#3B5999;
+  height:45px;
+  width:45px;
+  margin:2px;
+  margin-right:2px;
+  margin-left:5px;
+  font-size:20px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0 0 1px;
+  border-radius:2px;
+}
+.navbar{
+  margin-left:-10px;
+  margin-right:-10px;
+}

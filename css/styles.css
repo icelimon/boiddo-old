@@ -1,0 +1,159 @@
+.no-margin{
+	margin: 0px;
+}
+.margin54{
+	margin-top: 60px;
+}
+.no-padding{
+	padding: 0px;
+}
+.no-margin >p{ 
+	margin: 0px;
+	padding: 0px;
+}
+
+.contact ul li{
+	float: right;
+    list-style: none;
+}
+ol, ul {
+  list-style: none;
+}
+.bgc{
+	background-color: #e5e5f5;
+}
+.site-footer{
+	background-color: #222;
+	color: #b2b2b2;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+.padding-left-30{
+	padding-left: 30px;
+}
+.bottom-footer{
+	border-top: 1px solid #b2b2b2;
+	margin-top: 10px;
+	padding-top: 10px;
+	color: #b2b2b2;
+}
+.footer-nav{
+	text-align: right;
+	list-style: none;
+}
+.footer-nav li{
+	display: inline;
+}
+.footer-nav li:not(:first-child):before{
+	content: '|';
+	padding: 0px 10px;
+}
+.footer-nav a{
+	color: #b2b2b2;
+}
+.footer-nav a:hover{
+	color: #929292;
+	text-decoration: none;
+}
+.form-header{
+	text-align: center;
+	padding: 0px 0px 10px 0px;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.thumbnail p{
+	margin: 0px;
+}
+.thumbnail h4{
+	margin: 0px;
+}
+.thumbnail h5{
+	margin-top: 0px;
+}
+.no-bottom-margin-padding h4{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.bg-gray{
+	background-color: gray;
+	color: black;
+	margin-top: 0px;
+}
+.center{
+	text-align: center;
+}
+.fixed-height{
+	height: 60px;
+}
+.bg-blue{
+	background-color:#0072C6;
+	color: white;
+	margin-top: 0px;
+}
+.bg-navi{
+	background-color:#00A0BE;
+	color: white;
+	margin-top: 0px;
+	padding: 5px;
+}
+#regestablish{
+	display: none;
+}
+
+#fault{
+	font-style: italic;
+	font-weight: 600;
+}
+
+.connected{
+	position: absolute;
+	right: 10%;
+	bottom: 20px;
+	left: 0%;
+	z-index: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #000;
+	text-align: right;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+}
+.connected > h4{
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+#doc-view-more{
+	display: none;
+}
+#hos-view-more{
+	display: none;
+}
+#pro{
+	display: none;
+}
+
+.navigation {
+	background: #0072C6;
+	margin-top: 4px;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.no-margin h3,h4,p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.form-text p{
+	margin-top: 4px;
+	text-align: right;
+}
+.form-text input{
+	margin-top: 12px;
+	text-align: right;
+}
+#searchservice{
+	display: none;
+}
