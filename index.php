@@ -559,7 +559,7 @@ if($user_ok == true){
 				LIMIT 6") or die('Invalid query: doc' . mysqli_error());
 			$i=0;
 			$numdr = mysqli_num_rows($result);
-
+			
 			while ($row = mysqli_fetch_assoc($result)) {
 				$doc_id[$i] = $row['doctor_id'];
 				$list[$i][0]= $row['doctor_sex'];
@@ -591,7 +591,8 @@ if($user_ok == true){
 
 				$sql = mysqli_query($db_conx,"SELECT * FROM doctors_professional WHERE published='1' ORDER BY doctor_id DESC 
 					LIMIT 6") or die('Invalid query: ' . mysqli_error());
-                                //$query = mysqli_query($db_conx, $sql);
+				//$query = mysqli_query($db_conx, $sql);
+				
 				$l=0;
 				while($rowpro=mysqli_fetch_assoc($sql)){
 					$proData[$l][0]=$rowpro['hospital_name'];
@@ -603,7 +604,7 @@ if($user_ok == true){
 					$l++;
 				}
 			}
- //$profile_pic = '<img src="user/'.$optionData[0][0].'" alt="'.$optionData[0][1].'">';
+ 
 			?>
 
 			<!--Recently connected doctors Start here-->
@@ -612,7 +613,9 @@ if($user_ok == true){
 
 				<div class="panel-body">
 					<div class="row">
-					<?php for($i=0;$i<3;$i++){?>
+					<?php 
+					$limits = ($numdr>=3)?3:$numdr;
+					for($i=0;$i<$limits;$i++){?>
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<div class="panel panel-info">
 								<div class="hidden-xs">
@@ -641,7 +644,9 @@ if($user_ok == true){
 						<button id="doc-more-click" class="btn btn-link" style="padding: 0px; margin-left: 15px;" role="btn">View more</button>
 					</div>
 						<div id="doc-view-more">
-					<?php for($i=3;$i<6;$i++){?>
+					<?php 
+					$limits = ($numdr>=6)?6:$numdr;
+					for($i=3;$i<$limits;$i++){?>
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<div class="panel panel-info">
 								<div class="hidden-xs">
@@ -681,7 +686,7 @@ if($user_ok == true){
 			$result = mysqli_query($db_conx,"SELECT * FROM hospitals WHERE published='1'
 				ORDER BY hospital_id DESC 
 				LIMIT 6") or die('database error!!');
-
+			$num_hos = mysqli_num_rows($result);
                         //print values to screen
 			$i=0;
 			while ($row = mysqli_fetch_assoc($result)) {
@@ -694,9 +699,8 @@ if($user_ok == true){
 				$i++;
 			}
 
-			$sql = mysqli_query($db_conx,"SELECT image, img_name FROM hospitals_options WHERE updated='1' ORDER BY hospital_id DESC 
-					LIMIT 6") or die('Invalid query: ' . mysqli_error());
-                                //$query = mysqli_query($db_conx, $sql);
+			$sql = mysqli_query($db_conx,"SELECT image, img_name FROM hospitals_options WHERE updated='1' ORDER BY hospital_id DESC LIMIT 6") or die('Invalid query: ' . mysqli_error());
+            //$query = mysqli_query($db_conx, $sql);
 			$j=0;
 			while($rows=mysqli_fetch_assoc($sql)){
 				$hosimg[$j][0]=$rows['image'];
@@ -711,6 +715,7 @@ if($user_ok == true){
 
                         //print values to screen
 			$i=0;
+			
 			while ($row = mysqli_fetch_assoc($result)) {
 				$hosinfo[$i][0]= $row['fullname'];
 				$hosinfo[$i][1]= $row['street_no'];
@@ -732,7 +737,9 @@ if($user_ok == true){
 				<div class="panel-body">
 					<div class="row" style="text-align:center;">
 
-					<?php for($i=0;$i<3;$i++){?>
+					<?php 
+					$limits = ($num_hos>=3)?3:$num_hos;
+					for($i=0;$i<$limits;$i++){?>
 						<div class="col-xs-12 col-sm-4 col-md-4 ">
 							<div class="thumbnail">
 								<?php echo '<img class="img-responsive" src="user_hos/'.$hosimg[$i][1].'" alt="'.$hosimg[0][0].'"height="80px" width="120px">'; ?>
@@ -751,7 +758,9 @@ if($user_ok == true){
 						<button id="hos-more-click" class="btn btn-link pull-left" style="padding: 0px; margin-left: 15px;" role="btn">View more</button>
 					</div>
 						<div id="hos-view-more">
-					<?php for($i=3;$i<6;$i++){?>
+					<?php 
+					$limits = ($num_hos>=3)?3:$num_hos;
+					for($i=3;$i<$limits;$i++){?>
 						<div class="col-xs-12 col-sm-4 col-md-4 ">
 							<div class="thumbnail">
 								<?php echo '<img class="img-responsive" src="user_hos/'.$hosimg[$i][1].'" alt="'.$hosimg[0][0].'"height="80px" width="120px">'; ?>
