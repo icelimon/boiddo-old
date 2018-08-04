@@ -40,15 +40,15 @@ if($_POST['category'] == 'doctors'){
 	$birth_year = date("Y",$birth_day);
 	$birth_month = date("M",$birth_day);
 	
-	$age = date("Y") - $birth_year;
-	$mon = date("M") - $birth_month;
+	$age = (int)date("Y") - (int)$birth_year;
+	$mon = (int)date("M") - (int)$birth_month;
 	if($mon >= 6){
 		$age = $age+1;
 	}
 
 	$sqls = mysqli_query($db_conx,"SELECT image, img_name FROM doctors_options WHERE doctor_id='$doctors_id' ORDER BY doctor_id DESC 
 			LIMIT 1") or die('Invalid query: ' . mysqli_error());
-	                                //$query = mysqli_query($db_conx, $sql);
+	//$query = mysqli_query($db_conx, $sql);
 
 	while($rows=mysqli_fetch_assoc($sqls)){
 		$image=$rows['image'];
@@ -127,8 +127,8 @@ if($_POST['category'] == 'doctors'){
 			$hos_post = $row['hospital_postcode'];
 			$hos_country = $row['hospital_country'];
 		}
-	$age = date("Y") - $estd_year;
-	$mon = date("M") - $estd_month;
+	$age = (int)date("Y") - (int)$estd_year;
+	$mon = (int)date("M") - (int)$estd_month;
 	if($mon >= 6){
 		$age = $age+1;
 	}
@@ -375,7 +375,7 @@ if($_POST['category'] == 'doctors'){
 		$requestor = $check_row['requestor'];
 		$rq_sex = $check_row['rq_sex'];
 		$rq_age = $check_row['rq_age'];
-		$rq_age = $rq_age." Years"
+		$rq_age = $rq_age." Years";
 		$rq_relation = $check_row['rq_relation'];
 		$rq_housename = $check_row['rq_housename'];
 		if(empty($rq_housename)){
